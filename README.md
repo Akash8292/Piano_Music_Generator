@@ -35,5 +35,4 @@ The discriminator
 1. Download the repository and unzip it.
 2. Install necessary packages using `pip install -r requirements.txt`.
 3. Run the `load_model.ipynb` to generate `png` images and after that run `img2midi.ipynb` to convert it into `midi` files.
-4. If you want to convert midi to wav, run `midi2wav.ipynb` file.
-5. Read the `instructions.txt` for better understanding of repository.
+4. Read the `instructions.txt` for better understanding of repository.
