@@ -7,30 +7,16 @@ I acknowledge that the video or gameplay utilized was sourced from YouTube and m
 ## Abstract
 This model suggests an approach that can produce lifelike piano compositions autonomously through the utilization of General Adversarial Network (GAN) introduced by Ian Goodfellow in 2014. The generated piano music has a duration of 37 seconds and is created from a 14-dimensional latent vector. Training is conducted using the <a href="https://www.kaggle.com/datasets/jackvial/themaestrodatasetv2">MAESTRO V2 dataset</a>. The model is developed using `Tensorflow` and entirely coded in `Python`.
 
-This generated music has many applications. In below video, i used generated music as background music for mario game.
-
-
-https://user-images.githubusercontent.com/76246981/232266962-758e25b0-41e8-472e-9cc9-409ef7dab781.mov
-
 ## Detailed
 
 This repository presents a deep learning model that produces lifelike piano music autonomously from a 14-dimensional latent vector using General Adversarial Network (GAN). The `midi2img.ipynb` file converts midi files into images, where each image represents the pitch versus time distribution of the midi file in `png` format. The `midi2image.ipynb` processes 300 notes from the midi, producing the corresponding distribution; the quantity of notes can be adjusted as needed. These `png` images form the training dataset for the model. The model generates a `png` image, which is then transformed into `midi` using image2midi.
 
-The `midi2image.ipynb` and `image2midi.ipynb` files are sourced from the <a href="https://github.com/mathigatti/midi2img">midi2image</a> repository.
 
 These images are utilized in training the proposed model. The generator learns and replicates the distribution, while the discriminator distinguishes between the actual (real) and generated (fake) distributions. Training concludes once the discriminator can classify each distribution with approximately 0.5 probability, typically after 3000 iterations. At this stage, the generator has effectively learned the distribution and can produce identical new distributions.
 
 The GAN consists of two models: the generator and the discriminator. The generator comprises 3 Convolutional layers, 3 Upsampling layers, and one dense layer with leaky ReLU activation. Taking a 14-dimensional latent vector as input, the generator generates images sized at 106x300x1. The discriminator, responsible for discerning real from fake distributions, consists of 5 Convolutional layers and one dense layer with Leaky ReLU and sigmoid activation. It assesses input images of size 106x300x1 to classify them as real or fake.
 
 # Highlights
-
-Full Video <a href="https://drive.google.com/file/d/1NYg_Z4_gVGdsUMXpheTuY6lZz2jrWhcM/view?usp=sharing"> Link </a>
-
-The generated `midi` file   <a href="https://drive.google.com/file/d/1xqsWSK9aoe1HrTNwekgMcjeRkvuOYn4i/view?usp=sharing"> Link </a>
-
-The generated `wav` file    <a href="https://drive.google.com/file/d/1N1_APalG3YtQVYZkLdZk49K1zgXDu_1Y/view?usp=sharing"> Link </a>
-
-The generator model   <a href="https://drive.google.com/file/d/1JBs3Hoa3dm5aGrNrPfWSqmGeW0Yxro0D/view?usp=sharing"> Link </a>
 
 Pitch vs time distribution of generated file
 
