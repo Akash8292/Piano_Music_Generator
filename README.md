@@ -1,12 +1,11 @@
 # Disclaimer
 
-I admit that the video or gameplay used is obtained through youtube and may under copyright protection. Such usage is completly inadvertent. It is quite possible that i overlooked to give full scholarly credit to the copyright owners. I believe that the non-commercial, only-for-education use of the material may allow the video in question fall under fair use of such content.
+I acknowledge that the video or gameplay utilized was sourced from YouTube and may be protected by copyright. This was unintentional. It is possible that I neglected to properly attribute credit to the copyright holders. I maintain that the non-commercial, educational use of the material may qualify the video in question for fair use.
 
 # About
 
 ## Abstract
-
-This repository proposes a model which can generate realistic piano music without human interaction using General Adversarial Network (GAN) proposed by Ian Goodfellow in 2014. This model generates piano music of 37 seconds from a latent vector of size 14. It is trained on <a href="https://www.kaggle.com/datasets/jackvial/themaestrodatasetv2">MAESTRO V2 dataset </a>. The model is built with `Tensorflow` and completly implemented in `Python`.
+This model suggests an approach that can produce lifelike piano compositions autonomously through the utilization of General Adversarial Network (GAN) introduced by Ian Goodfellow in 2014. The generated piano music has a duration of 37 seconds and is created from a 14-dimensional latent vector. Training is conducted using the <a href="https://www.kaggle.com/datasets/jackvial/themaestrodatasetv2">MAESTRO V2 dataset</a>. The model is developed using `Tensorflow` and entirely coded in `Python`.
 
 This generated music has many applications. In below video, i used generated music as background music for mario game.
 
@@ -15,12 +14,13 @@ https://user-images.githubusercontent.com/76246981/232266962-758e25b0-41e8-472e-
 
 ## Detailed
 
-This repository proposes a deep learning model which generates realistic piano music without human interaction from a latent vector of size 14 using General Adversarial Network (GAN). The `midi2img.ipynb` convertes midi files to image, this image is the pitch vs time distribution of that midi file in the `png` format. The `midi2image.ipynb` takes 300 notes of midi and generates distribution accordingly, the number of notes can be changed as per convience. These `png` images is the training dataset for model. The model generates `png` image and this image is converted to `midi` using image2midi.
-The `midi2image.ipynb` and `image2midi.ipynb` files are taken from <a href="https://github.com/mathigatti/midi2img">midi2image</a> repository.
+This repository presents a deep learning model that produces lifelike piano music autonomously from a 14-dimensional latent vector using General Adversarial Network (GAN). The `midi2img.ipynb` file converts midi files into images, where each image represents the pitch versus time distribution of the midi file in `png` format. The `midi2image.ipynb` processes 300 notes from the midi, producing the corresponding distribution; the quantity of notes can be adjusted as needed. These `png` images form the training dataset for the model. The model generates a `png` image, which is then transformed into `midi` using image2midi.
 
-This images are fed to proposed model. The generator learn the distribution and generates the fake distribution, on the other hand discriminator discriminates between real (actual) and fake (generated) distribution. The training is stopped when if the discriminator classifies each distribution with probabiility 0.5 (approximatly after 3000 iterations). At this point the generator perfectly learns the distribution and can generate new identical distribution.
+The `midi2image.ipynb` and `image2midi.ipynb` files are sourced from the <a href="https://github.com/mathigatti/midi2img">midi2image</a> repository.
 
-The GAN has two models, generator and discriminator. The generator has 3 Convolutional layers, 3 Upsampling layers and one dense layer with leaky ReLU activation. The generator takes input as latent vector of size 14, then generates the images of size 106x300x1. The discriminator discriminator between real and fake distributions, it has 5 Convolutional layers and one dense layer with Leaky ReLU and sigmoid activation. The discriminator takes input images of size 106x300x1 and classifies it as real or fake.
+These images are utilized in training the proposed model. The generator learns and replicates the distribution, while the discriminator distinguishes between the actual (real) and generated (fake) distributions. Training concludes once the discriminator can classify each distribution with approximately 0.5 probability, typically after 3000 iterations. At this stage, the generator has effectively learned the distribution and can produce identical new distributions.
+
+The GAN consists of two models: the generator and the discriminator. The generator comprises 3 Convolutional layers, 3 Upsampling layers, and one dense layer with leaky ReLU activation. Taking a 14-dimensional latent vector as input, the generator generates images sized at 106x300x1. The discriminator, responsible for discerning real from fake distributions, consists of 5 Convolutional layers and one dense layer with Leaky ReLU and sigmoid activation. It assesses input images of size 106x300x1 to classify them as real or fake.
 
 # Highlights
 
@@ -60,9 +60,3 @@ The discriminator
 
 In future, i'm looking forward to generate realistic music with multiple instruments.
 
-# Credits
-<a href="https://github.com/mathigatti/midi2img">midi2img</a> repository for midi to image and image to midi.
-
-# Connect with me
-
-Give your feedback at : karanhadiyal65@gmail.com
